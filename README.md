@@ -1,0 +1,1 @@
+A weather plugin for the JumpFm file manager.

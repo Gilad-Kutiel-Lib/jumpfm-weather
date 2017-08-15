@@ -1,3 +1,5 @@
+import { JumpFm } from 'jumpfm-api'
+
 import * as weather from 'weather-js'
 
 interface CurrentWeather {
@@ -36,9 +38,11 @@ export function load(jumpFm) {
                             'err'
                     )
 
+                const txt = `${cur.temperature}° ${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
                 jumpFm.statusBar.msg([cls])(
-                    'weather',
-                    `${cur.temperature}° ${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
+                    'weather', {
+                        txt: txt
+                    }
                 )
             })
     }

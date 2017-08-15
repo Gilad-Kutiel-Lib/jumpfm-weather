@@ -18,7 +18,7 @@ interface CurrentWeather {
     imageUrl: string
 }
 
-export function load(jumpFm) {
+export function load(jumpFm: JumpFm) {
     function update() {
         weather.find({
             search: jumpFm.settings.getStr('weatherLocation', 'Haifa, IL'),
@@ -38,10 +38,10 @@ export function load(jumpFm) {
                             'err'
                     )
 
-                const txt = `${cur.temperature}° ${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
                 jumpFm.statusBar.msg([cls])(
                     'weather', {
-                        txt: txt
+                        txt: `${cur.temperature}°`,
+                        dataTitle: `${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
                     }
                 )
             })

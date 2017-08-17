@@ -20,9 +20,10 @@ interface CurrentWeather {
 
 export function load(jumpFm: JumpFm) {
     function update() {
+        const location = jumpFm.settings.getStr('weatherLocation', 'Haifa, IL')
         weather.find({
-            search: jumpFm.settings.getStr('weatherLocation', 'Haifa, IL'),
-            degreeType: 'C'
+            search: location
+            , degreeType: 'C'
         },
             (err, res) => {
                 if (err) {
@@ -41,7 +42,7 @@ export function load(jumpFm: JumpFm) {
                 jumpFm.statusBar.msg([cls])(
                     'weather', {
                         txt: `${cur.temperature}°`,
-                        dataTitle: `${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
+                        dataTitle: `${location} ${cur.temperature}° ${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
                     }
                 )
             })

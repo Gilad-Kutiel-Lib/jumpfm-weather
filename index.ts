@@ -33,18 +33,16 @@ export function load(jumpFm: JumpFm) {
 
                 const cur = res[0].current as CurrentWeather
                 const temp = cur.temperature
-                const cls =
+                const type =
                     temp < 25 ? 'info' : (
                         temp < 35 ? 'warn' :
                             'err'
                     )
 
-                jumpFm.statusBar.msg([cls])(
-                    'weather', {
-                        txt: `${cur.temperature}°`,
-                        dataTitle: `${location} ${cur.temperature}° ${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`
-                    }
-                )
+                jumpFm.statusBar.msg('weather')
+                    .setType(type)
+                    .setText(`${cur.temperature}°`)
+                    .setTooltip(`${location} ${cur.temperature}° ${cur.humidity}% ${cur.windspeed.replace(/ /g, '')}`)
             })
     }
 

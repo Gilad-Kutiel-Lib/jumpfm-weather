@@ -1,14 +1,24 @@
 {
-    "name": "jumpfm-weather",
-    "version": "1.1.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "weather-js": "^2.0.0"
-    }
+  "name": "jumpfm-weather",
+  "version": "1.1.0",
+  "description": "A weather plugin for the [JumpFm](http://jumpfm.org/) file manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JumpFm/jumpfm-weather.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/JumpFm/jumpfm-weather/issues"
+  },
+  "homepage": "https://github.com/JumpFm/jumpfm-weather#readme"
 }
